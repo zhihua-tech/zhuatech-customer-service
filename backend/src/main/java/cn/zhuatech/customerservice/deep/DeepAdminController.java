@@ -1,0 +1,2 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
+package cn.zhuatech.customerservice.deep;import cn.zhuatech.customerservice.common.ApiResponse;import org.springframework.web.bind.annotation.*;@RestController @RequestMapping("/api/admin/service") public class DeepAdminController{private final DeepDomainService s;public DeepAdminController(DeepDomainService s){this.s=s;}@PostMapping("/knowledge/{id}/publish")ApiResponse<?> publish(@PathVariable Long id){return ApiResponse.ok(s.publishArticle(id));}}

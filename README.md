@@ -66,3 +66,7 @@ Copyright © 2026 上海如静知华信息科技有限公司。
 | ![微信咨询二维码一](docs/images/zhuatech-wechat-consulting.png) | ![微信咨询二维码二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO：全渠道客户服务系统、CS系统源码、企业数字化、Java企业系统、Vue管理系统、知华科技、上海如静知华信息科技有限公司。
+
+## V2.0 专业领域能力
+
+新增客户、服务工单、内外部沟通消息和知识文章模型。SLA按P1–P4或自定义时限计算，支持自动升级；工单必须具备客户可见回复后才能解决，并支持确认关闭和七日内重开。知识文章执行草稿、审核、管理员发布流程。专业API根路径为 `/api/service`。

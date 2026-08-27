@@ -36,3 +36,23 @@
 | `escalated` | boolean | 已升级 |
 
 接口统一返回 `ApiResponse`；业务冲突使用 HTTP 409，参数错误使用 400，未认证使用 401，无权限使用 403。
+
+## V2.0 客户服务专业接口
+
+| 方法 | 路径 | 说明 |
+| --- | --- | --- |
+| GET | `/api/service/dashboard` | 客户、工单、SLA 与知识库总览 |
+| POST | `/api/service/customers` | 建立客户档案 |
+| POST | `/api/service/tickets` | 创建工单并计算优先级 SLA |
+| POST | `/api/service/tickets/{id}/assign` | 分派服务人员 |
+| POST | `/api/service/tickets/{id}/messages` | 添加客户回复或内部备注 |
+| POST | `/api/service/tickets/{id}/resolve` | 提交解决方案 |
+| POST | `/api/service/tickets/{id}/close` | 关闭已解决工单 |
+| POST | `/api/service/tickets/{id}/reopen` | 在服务窗口内重开工单 |
+| POST | `/api/service/sla/escalate` | 扫描并升级超时工单 |
+| POST | `/api/service/knowledge` | 创建知识文章 |
+| POST | `/api/service/knowledge/{id}/submit` | 提交文章审核 |
+| POST | `/api/admin/service/knowledge/{id}/publish` | 发布知识文章 |
+| GET | `/api/service/knowledge/search` | 检索已发布知识 |
+
+工单解决前必须有面向客户的公开回复；SLA 扫描可自动标记超时升级，关闭后的工单仅能在规定窗口内重开。
