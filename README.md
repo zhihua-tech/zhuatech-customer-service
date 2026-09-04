@@ -53,6 +53,10 @@ cd .. && cp .env.example .env && docker compose up --build
 
 开发演示账号：`admin / admin123`、`operator / operator123`。生产环境必须通过环境变量替换全部默认凭据。
 
+## 客户工单关闭与升级
+
+新增工单关闭前的企业级决策门禁，统一校验客户身份、服务权益、严重度、根因分析、解决方案验证、SLA 违约补偿、客户验收和职责分离。详见[企业客户工单关闭决策](docs/ENTERPRISE_CASE_RESOLUTION.md)。
+
 ## 许可与商业授权
 
 Copyright © 2026 上海如静知华信息科技有限公司。
