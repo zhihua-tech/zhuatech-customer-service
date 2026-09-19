@@ -6,6 +6,8 @@ ZhuaTech CS 是知华科技（上海如静知华信息科技有限公司）发�
 
 [知华科技官网](https://www.zhuatech.cn/) · [架构说明](docs/ARCHITECTURE.md) · [API 文档](docs/API.md) · [企业能力](docs/ENTERPRISE.md) · [测试说明](docs/TESTING.md)
 
+本次新增全渠道客服路由：按渠道、语言、业务技能、VIP 标识、客服容量和 SLA 剩余时间自动分配，并明确无法路由原因。
+
 ![全渠道客户服务系统产品界面示意](docs/images/product-overview.svg)
 
 ## 业务模块
