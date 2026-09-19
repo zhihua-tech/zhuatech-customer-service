@@ -1,7 +1,16 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.customerservice;import org.junit.jupiter.api.Test;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.boot.test.context.SpringBootTest;import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;import org.springframework.http.MediaType;import org.springframework.test.web.servlet.MockMvc;import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @SpringBootTest @AutoConfigureMockMvc class CaseRoutingApiTests{@Autowired MockMvc mvc;static final String BODY="""
  {"routeAt":"2026-09-20T09:00:00","agents":[{"agentId":"CS-1","queue":"VIP","channels":["CHAT"],"languages":["ZH"],"skills":["REFUND"],"capacity":3,"openCases":1,"active":true}],"cases":[{"caseNo":"CASE-1","channel":"CHAT","language":"ZH","requiredSkill":"REFUND","vip":true,"slaDueAt":"2026-09-20T09:20:00"},{"caseNo":"CASE-2","channel":"VOICE","language":"ZH","requiredSkill":"REFUND","vip":false,"slaDueAt":"2026-09-20T10:00:00"}]}
  """;
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  @Test void routesByChannelLanguageSkillVipAndCapacity()throws Exception{mvc.perform(post("/api/advanced/customer-service/route").with(httpBasic("operator","operator123")).contentType(MediaType.APPLICATION_JSON).content(BODY)).andExpect(status().isOk()).andExpect(jsonPath("$.data.assignedCount").value(1)).andExpect(jsonPath("$.data.unassignedCount").value(1)).andExpect(jsonPath("$.data.assignments[0].slaStatus").value("SLA_RISK"));}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  @Test void requiresAuthentication()throws Exception{mvc.perform(post("/api/advanced/customer-service/route").contentType(MediaType.APPLICATION_JSON).content(BODY)).andExpect(status().isUnauthorized());}}

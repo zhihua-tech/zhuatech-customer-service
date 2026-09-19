@@ -1,3 +1,12 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.customerservice.controller;import cn.zhuatech.customerservice.common.ApiResponse;import cn.zhuatech.customerservice.service.CaseRoutingService;import jakarta.validation.Valid;import org.springframework.web.bind.annotation.*;
-@RestController @RequestMapping("/api/advanced/customer-service") public class CaseRoutingController{private final CaseRoutingService service;public CaseRoutingController(CaseRoutingService service){this.service=service;}@PostMapping("/route") public ApiResponse<CaseRoutingService.RoutingResult> route(@Valid @RequestBody CaseRoutingService.RoutingRequest request){return ApiResponse.ok(service.route(request));}}
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+@RestController @RequestMapping("/api/advanced/customer-service") public class CaseRoutingController{private final CaseRoutingService service;/**
+                                                                                                                                               * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                               */
+public CaseRoutingController(CaseRoutingService service){this.service=service;}/**
+                                                                                                                                                                                                                              * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                              */
+@PostMapping("/route") public ApiResponse<CaseRoutingService.RoutingResult> route(@Valid @RequestBody CaseRoutingService.RoutingRequest request){return ApiResponse.ok(service.route(request));}}
